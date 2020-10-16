@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="app">
       <Header setSelectedClass={setSelectedClass} />
-      <Result setSelectedClass={setSelectedClass} />
+      <Result selectedClass={selectedClass} />
     </div>
   );
 }

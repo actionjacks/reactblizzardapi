@@ -1,4 +1,4 @@
-const API_KEY = "&access_token=USh9hIj4175geDGuPHhnZzEiDD50xqxGyM";
+const API_KEY = "&access_token=US3DCpJ9NKly5m77Vq4oZt7ZIGaN5TZQcG";
 
 export default {
   fetchMageCards: `${API_KEY}&class=mage`,
