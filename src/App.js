@@ -16,3 +16,5 @@ function App() {
 }
 
 export default App;
+
+//add fetch data all game from blizz

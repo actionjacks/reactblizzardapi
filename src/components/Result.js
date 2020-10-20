@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
+import CircularProgress from "@material-ui/core/CircularProgress";
 import apiKey from "../apiKey";
 import Card from "./Card";
 import "../styles/Result.css";
-import FlipMove from "react-flip-move";
 
 function Result({ selectedClass }) {
   const [cards, setCards] = useState([]);
+  const [load, setLoad] = useState(null);
 
   useEffect(() => {
+    setLoad(true);
     const battleNetWrapper = require("battlenet-api-wrapper");
     const clientId = apiKey.clientId;
     const clientSecret = apiKey.clientSecret;
@@ -24,6 +26,7 @@ function Result({ selectedClass }) {
       // console.log(battleNetWrapper);
       setCards(data);
       console.log(cards.cards);
+      setLoad(false);
     }
     fetch();
   }, [selectedClass]);
@@ -31,11 +34,17 @@ function Result({ selectedClass }) {
   return (
     <>
       <div className="result">
-        <FlipMove className="result__container">
-          {cards.cards?.map((card) => (
-            <Card key={card.id} card={card} />
-          ))}
-        </FlipMove>
+        {load ? (
+          <div className="result__container__spinner">
+            <CircularProgress />
+          </div>
+        ) : (
+          <div className="result__container">
+            {cards.cards?.map((card) => (
+              <Card key={card.id} card={card} />
+            ))}
+          </div>
+        )}
       </div>
     </>
   );

@@ -8,6 +8,12 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
+.result__container__spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .result__container > img {
   width: 10%;
   transition: 0.3s;
