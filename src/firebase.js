@@ -1,10 +1,10 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyAHIN0d0kGNVRWlaJpqngWu-dEVJCqkuGg",
-  authDomain: "api-battlenet-app.firebaseapp.com",
-  databaseURL: "https://api-battlenet-app.firebaseio.com",
-  projectId: "api-battlenet-app",
-  storageBucket: "api-battlenet-app.appspot.com",
-  messagingSenderId: "545406389009",
-  appId: "1:545406389009:web:e83c5b349789cb24d39ab0",
-  measurementId: "G-RQ7G9LVQP0",
+  apiKey: "AIzaSyDQd5EO2Fw2U_GlYF7V1h7VzhoRmCvNdUs",
+  authDomain: "heartstone-api.firebaseapp.com",
+  databaseURL: "https://heartstone-api.firebaseio.com",
+  projectId: "heartstone-api",
+  storageBucket: "heartstone-api.appspot.com",
+  messagingSenderId: "1054026874034",
+  appId: "1:1054026874034:web:7cf1400a16a699d56e5dab",
+  measurementId: "G-R35D9SZGN3",
 };
