@@ -1,22 +1,9 @@
-function fetchOneSpecificCardandShowOneHealth(){
-    fetch('https://omgvamp-hearthstone-v1.p.mashape.com/cards/zwick',
-    {headers: new Headers({
-        'Accept':'application/json',
-        "X-Mashape-Key": "anAPIkey"
+## Heartstone cards database
 
-    })}
-)
-    .then(function(response){
-    console.log("test");
-        console.log(response);
-        if(response.ok){
-            console.log("test3");
-            return response.json();
-        }
-    })
-    .then(function(data){
-        console.log("test2");
-        console.log(data[0].health);
-    })
-    .catch(errorHandling);
-}
+![Image of Yaktocat](https://images.blz-contentstack.com/v3/assets/bltc965041283bac56c/blt25d472f4aa3951e6/5eebd59169a03212218fdc2e/logo.png)
+
+The app downloads herstone card data.
+app is still in development 
+
+live build 
+https://heartstone-api.web.app/
