@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import Button from "@material-ui/core/Button";
 import apiKey from "../apiKey";
 import Card from "./Card";
 import "../styles/Result.css";
@@ -10,6 +11,9 @@ function Result({ selectedClass }) {
   const [pageNumber, setPageNumber] = useState(1);
 
   useEffect(() => {
+    if (cards.pageCount === 2 && cards.page === 2) {
+      setPageNumber(1);
+    }
     setLoad(true);
     const battleNetWrapper = require("battlenet-api-wrapper");
     const clientId = apiKey.clientId;
@@ -23,12 +27,6 @@ function Result({ selectedClass }) {
         page: pageNumber,
         pageSize: 999,
       });
-      // console.log(data.pageCount);
-      if (data.pageCount > 1) {
-        setPageNumber(2);
-      } else {
-        setPageNumber(1);
-      }
       setCards(data);
       setLoad(false);
     }
@@ -47,7 +45,14 @@ function Result({ selectedClass }) {
             {cards.cards?.map((card) => (
               <Card key={card.id} card={card} />
             ))}
-            {}
+            {cards.pageCount > 1 ? (
+              <Button
+                className="result__button"
+                onClick={() => setPageNumber(2)}
+              >
+                Next Page
+              </Button>
+            ) : null}
           </div>
         )}
       </div>
