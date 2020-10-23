@@ -9,4 +9,5 @@ export default {
   fetchShamanCards: `shaman`,
   fetchWarlockCards: `warlock`,
   fetchWarriorCards: `warrior`,
+  fetchNeutralCards: `neutral`,
 };

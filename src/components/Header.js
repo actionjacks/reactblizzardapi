@@ -38,6 +38,9 @@ function Header({ setSelectedClass }) {
       case "warrior":
         setSelectedClass(requests.fetchWarriorCards);
         break;
+      case "neutral":
+        setSelectedClass(requests.fetchNeutralCards);
+        break;
       default:
         setSelectedClass(requests.fetchMageCards);
     }
@@ -63,6 +66,7 @@ function Header({ setSelectedClass }) {
           <option value="shaman">Shaman</option>
           <option value="warlock">Warlock</option>
           <option value="warrior">Warrior</option>
+          <option value="neutral">Neutral</option>
         </select>
       </form>
     </div>

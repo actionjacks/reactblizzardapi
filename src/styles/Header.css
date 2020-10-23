@@ -1,3 +1,20 @@
+@media (min-width: 359px) {
+  .header {
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: rgb(201, 218, 230);
+    box-shadow: 1px 1px 13px 0px rgba(95, 116, 131, 0.75);
+  }
+  .header__form {
+    font-size: 1.5rem;
+  }
+  .header__form > select {
+    padding: 0.5rem;
+  }
+}
+
 .header {
   height: 4rem;
   display: flex;

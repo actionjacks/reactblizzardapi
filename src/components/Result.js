@@ -7,6 +7,7 @@ import "../styles/Result.css";
 function Result({ selectedClass }) {
   const [cards, setCards] = useState([]);
   const [load, setLoad] = useState(null);
+  const [pageNumber, setPageNumber] = useState(1);
 
   useEffect(() => {
     setLoad(true);
@@ -14,22 +15,25 @@ function Result({ selectedClass }) {
     const clientId = apiKey.clientId;
     const clientSecret = apiKey.clientSecret;
 
-    async function fetch() {
+    async function fetch(pageNumber) {
       const bnw = new battleNetWrapper();
       await bnw.init(clientId, clientSecret);
       const data = await bnw.HearthstoneGameData.searchCards({
         class: `${selectedClass}`,
-        // page: 1,
+        page: pageNumber,
         pageSize: 999,
       });
-      // console.log(data);
-      // console.log(battleNetWrapper);
+      // console.log(data.pageCount);
+      if (data.pageCount > 1) {
+        setPageNumber(2);
+      } else {
+        setPageNumber(1);
+      }
       setCards(data);
-      console.log(cards.cards);
       setLoad(false);
     }
-    fetch();
-  }, [selectedClass]);
+    fetch(pageNumber);
+  }, [selectedClass, pageNumber]);
 
   return (
     <>
@@ -43,6 +47,7 @@ function Result({ selectedClass }) {
             {cards.cards?.map((card) => (
               <Card key={card.id} card={card} />
             ))}
+            {}
           </div>
         )}
       </div>
