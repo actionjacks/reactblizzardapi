@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Result from "./components/Result";
 import request from "./requests";
+require("dotenv").config();
 
 function App() {
   const [selectedClass, setSelectedClass] = useState(request.fetchMageCards);

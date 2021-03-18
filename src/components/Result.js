@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import CircularProgress from "@material-ui/core/CircularProgress";
 // import Button from "@material-ui/core/Button";
-// import apiKey from "../apiKey";
+import API from "../API";
 // import Card from "./Card";
 import BlizzAPI from "blizzapi";
 import "../styles/Result.css";
+
+const { CLIENT_ID } = process.env;
 
 function Result({ selectedClass }) {
   const [cards, setCards] = useState([]);
@@ -12,16 +14,18 @@ function Result({ selectedClass }) {
   // const [pageNumber, setPageNumber] = useState(1);
 
   useEffect(() => {
-    const api = new BlizzAPI({
-      region: "us",
-      clientId: "e4b0c1cf4f14416cb1f68a417f53e6cc",
-      clientSecret: "DtLcZEraCXzSmEoTU7GC8oLJZs4QPB1O",
-    });
-    const herstone = async () => {
-      const data = await api.query("/hearthstone/cards");
-      console.log(data);
-    };
-    herstone();
+    const dupa = CLIENT_ID;
+    console.log(dupa);
+    // const api = new BlizzAPI({
+    //   region: "us",
+    //   clientId: process.env.CLIENT_ID,
+    //   clientSecret: apiKey.clientSecret,
+    // });
+    // const herstone = async () => {
+    //   const data = await api.query("/hearthstone/cards");
+    //   console.log(data);
+    // };
+    // herstone();
   }, []);
 
   // useEffect(() => {
