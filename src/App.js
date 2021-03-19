@@ -1,21 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
+import Heartstone from "./components/Heartstone";
+
 import "./App.css";
-import Header from "./components/Header";
-import Result from "./components/Result";
-import request from "./requests";
-require("dotenv").config();
-
 function App() {
-  const [selectedClass, setSelectedClass] = useState(request.fetchMageCards);
-
   return (
     <div className="app">
-      <Header setSelectedClass={setSelectedClass} />
-      <Result selectedClass={selectedClass} />
+      <p>ROUTES GO THERE</p>
+      <Heartstone />
     </div>
   );
 }
 
 export default App;
-
-//add fetch data all game from blizz

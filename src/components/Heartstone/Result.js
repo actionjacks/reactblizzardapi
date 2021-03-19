@@ -1,31 +1,22 @@
 import React, { useState, useEffect } from "react";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import blizzApi from "../../blizzApiWrapper";
 // import Button from "@material-ui/core/Button";
-import API from "../API";
 // import Card from "./Card";
-import BlizzAPI from "blizzapi";
-import "../styles/Result.css";
 
-const { CLIENT_ID } = process.env;
+import "./styles/Result.css";
 
 function Result({ selectedClass }) {
   const [cards, setCards] = useState([]);
   const [load, setLoad] = useState(null);
   // const [pageNumber, setPageNumber] = useState(1);
 
+  const getHeartstoneCards = async () => {
+    const data = await blizzApi.query("/hearthstone/cards");
+    console.log(data);
+  };
   useEffect(() => {
-    const dupa = CLIENT_ID;
-    console.log(dupa);
-    // const api = new BlizzAPI({
-    //   region: "us",
-    //   clientId: process.env.CLIENT_ID,
-    //   clientSecret: apiKey.clientSecret,
-    // });
-    // const herstone = async () => {
-    //   const data = await api.query("/hearthstone/cards");
-    //   console.log(data);
-    // };
-    // herstone();
+    //getHeartstoneCards()
   }, []);
 
   // useEffect(() => {
@@ -54,6 +45,7 @@ function Result({ selectedClass }) {
   return (
     <>
       <div className="result">
+        <button onClick={() => getHeartstoneCards()}>KLIK</button>
         {/* {load ? (
           <div className="result__container__spinner">
             <CircularProgress />
