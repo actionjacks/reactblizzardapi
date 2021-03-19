@@ -28,7 +28,7 @@ function App() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/heartstone">heartstone</NavLink>
+            <NavLink to="/heartstone">heartstone_</NavLink>
           </li>
           <li>
             <NavLink to="/diablo">diablo</NavLink>
