@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "../styles/Header.css";
-import requests from "../requests";
+import requests from "./requests";
+import "./styles/Header.css";
 
 function Header({ setSelectedClass }) {
   const [cardsClass, setCardsClass] = useState("mage");
